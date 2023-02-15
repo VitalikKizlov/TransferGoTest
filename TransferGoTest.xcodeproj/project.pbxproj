@@ -14,6 +14,8 @@
 		FBA26398299BD2A300CA367F /* TransferGoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA26397299BD2A300CA367F /* TransferGoTestTests.swift */; };
 		FBA263A2299BD2A300CA367F /* TransferGoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */; };
 		FBA263A4299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */; };
+		FBA263C0299BF73800CA367F /* Transfer in Resources */ = {isa = PBXBuildFile; fileRef = FBA263BF299BF73800CA367F /* Transfer */; };
+		FBA263C2299BF74000CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263C1299BF74000CA367F /* Transfer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		FBA2639D299BD2A300CA367F /* TransferGoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITests.swift; sourceTree = "<group>"; };
 		FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBA263BF299BF73800CA367F /* Transfer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Transfer; path = ../Transfer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA263C2299BF74000CA367F /* Transfer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +79,12 @@
 		FBA26374299BD2A100CA367F = {
 			isa = PBXGroup;
 			children = (
+				FBA263BF299BF73800CA367F /* Transfer */,
 				FBA2637F299BD2A100CA367F /* TransferGoTest */,
 				FBA26396299BD2A300CA367F /* TransferGoTestTests */,
 				FBA263A0299BD2A300CA367F /* TransferGoTestUITests */,
 				FBA2637E299BD2A100CA367F /* Products */,
+				FBA263B1299BD41300CA367F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +127,13 @@
 			path = TransferGoTestUITests;
 			sourceTree = "<group>";
 		};
+		FBA263B1299BD41300CA367F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +150,9 @@
 			dependencies = (
 			);
 			name = TransferGoTest;
+			packageProductDependencies = (
+				FBA263C1299BF74000CA367F /* Transfer */,
+			);
 			productName = TransferGoTest;
 			productReference = FBA2637D299BD2A100CA367F /* TransferGoTest.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA2638A299BD2A300CA367F /* Assets.xcassets in Resources */,
+				FBA263C0299BF73800CA367F /* Transfer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +592,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FBA263C1299BF74000CA367F /* Transfer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Transfer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FBA26375299BD2A100CA367F /* Project object */;
 }
