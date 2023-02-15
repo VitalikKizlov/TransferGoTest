@@ -14,7 +14,7 @@
 		FBA26398299BD2A300CA367F /* TransferGoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA26397299BD2A300CA367F /* TransferGoTestTests.swift */; };
 		FBA263A2299BD2A300CA367F /* TransferGoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */; };
 		FBA263A4299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */; };
-		FBA263CF299CF35600CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263CE299CF35600CA367F /* Transfer */; };
+		FBA263D6299D4E8A00CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263D5299D4E8A00CA367F /* Transfer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		FBA2639D299BD2A300CA367F /* TransferGoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITests.swift; sourceTree = "<group>"; };
 		FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FBA263D1299CF43800CA367F /* TransferKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TransferKit; path = ../TransferKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA263CF299CF35600CA367F /* Transfer in Frameworks */,
+				FBA263D6299D4E8A00CA367F /* Transfer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +77,6 @@
 		FBA26374299BD2A100CA367F = {
 			isa = PBXGroup;
 			children = (
-				FBA263D0299CF43800CA367F /* Packages */,
 				FBA2637F299BD2A100CA367F /* TransferGoTest */,
 				FBA26396299BD2A300CA367F /* TransferGoTestTests */,
 				FBA263A0299BD2A300CA367F /* TransferGoTestUITests */,
@@ -133,14 +131,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FBA263D0299CF43800CA367F /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				FBA263D1299CF43800CA367F /* TransferKit */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,7 +148,7 @@
 			);
 			name = TransferGoTest;
 			packageProductDependencies = (
-				FBA263CE299CF35600CA367F /* Transfer */,
+				FBA263D5299D4E8A00CA367F /* Transfer */,
 			);
 			productName = TransferGoTest;
 			productReference = FBA2637D299BD2A100CA367F /* TransferGoTest.app */;
@@ -233,7 +223,7 @@
 			);
 			mainGroup = FBA26374299BD2A100CA367F;
 			packageReferences = (
-				FBA263CD299CF35600CA367F /* XCRemoteSwiftPackageReference "TransferKit" */,
+				FBA263D4299D4E8A00CA367F /* XCRemoteSwiftPackageReference "CurrencyConverterKit" */,
 			);
 			productRefGroup = FBA2637E299BD2A100CA367F /* Products */;
 			projectDirPath = "";
@@ -603,9 +593,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FBA263CD299CF35600CA367F /* XCRemoteSwiftPackageReference "TransferKit" */ = {
+		FBA263D4299D4E8A00CA367F /* XCRemoteSwiftPackageReference "CurrencyConverterKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/VitalikKizlov/TransferKit";
+			repositoryURL = "https://github.com/VitalikKizlov/CurrencyConverterKit";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -614,9 +604,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FBA263CE299CF35600CA367F /* Transfer */ = {
+		FBA263D5299D4E8A00CA367F /* Transfer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FBA263CD299CF35600CA367F /* XCRemoteSwiftPackageReference "TransferKit" */;
+			package = FBA263D4299D4E8A00CA367F /* XCRemoteSwiftPackageReference "CurrencyConverterKit" */;
 			productName = Transfer;
 		};
 /* End XCSwiftPackageProductDependency section */
