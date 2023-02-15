@@ -13,7 +13,7 @@ import Models
 
 class ViewController: UIViewController {
 
-    private let viewModel: TransferViewModel
+    private let viewModel: CurrencyExchangeViewModel
 
     @AutoLayoutable private var transferView = TransferView()
 
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
     // MARK: - Init
 
-    init(_ viewModel: TransferViewModel) {
+    init(_ viewModel: CurrencyExchangeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

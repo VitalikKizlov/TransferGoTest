@@ -46,6 +46,7 @@
 		FBA2639D299BD2A300CA367F /* TransferGoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITests.swift; sourceTree = "<group>"; };
 		FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBA263D8299D511500CA367F /* CurrencyConverterKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CurrencyConverterKit; path = ../CurrencyConverterKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		FBA26374299BD2A100CA367F = {
 			isa = PBXGroup;
 			children = (
+				FBA263D7299D511500CA367F /* Packages */,
 				FBA2637F299BD2A100CA367F /* TransferGoTest */,
 				FBA26396299BD2A300CA367F /* TransferGoTestTests */,
 				FBA263A0299BD2A300CA367F /* TransferGoTestUITests */,
@@ -129,6 +131,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBA263D7299D511500CA367F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FBA263D8299D511500CA367F /* CurrencyConverterKit */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
