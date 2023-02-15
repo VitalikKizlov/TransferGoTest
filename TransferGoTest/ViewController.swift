@@ -9,6 +9,7 @@ import UIKit
 import Combine
 import Transfer
 import Utilities
+import Models
 
 class ViewController: UIViewController {
 
@@ -36,7 +37,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         addTransferView()
-        configureTransferView()
         setupBindings()
     }
 
@@ -54,6 +54,25 @@ class ViewController: UIViewController {
     }
 
     private func setupBindings() {
+        viewModel
+            .$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                guard let self = self else { return }
+
+                switch state {
+                case .idle(let data):
+                    self.updateTransferView(from: data)
+                case .failed(let error):
+                    print(error)
+                case .loading:
+                    print("loading")
+                case .loaded(let data):
+                    self.updateTransferView(from: data)
+                }
+            }
+            .store(in: &subscriptions)
+
         transferView
             .viewActionPublisher
             .sink { [weak self] action in
@@ -63,12 +82,12 @@ class ViewController: UIViewController {
             .store(in: &subscriptions)
     }
 
-    private func configureTransferView() {
-        let senderCountryViewModel = CountryViewViewModel(image: UIImage(systemName: "scribble")!, title: "PLN")
-        let senderExchangeViewModel = ExchangeDataViewViewModel(title: "Sending from", countryViewViewModel: senderCountryViewModel, amount: 300)
+    private func updateTransferView(from data: ExchangeData) {
+        let senderCountryViewModel = CountryViewViewModel(image: data.sender.country.image, title: data.sender.country.currency.rawValue)
+        let senderExchangeViewModel = ExchangeDataViewViewModel(title: "Sending from", countryViewViewModel: senderCountryViewModel, amount: data.sender.amount)
 
-        let receiverCountryViewModel = CountryViewViewModel(image: UIImage(systemName: "scribble")!, title: "UAH")
-        let receiverExchangeViewModel = ExchangeDataViewViewModel(title: "Receiver gets", countryViewViewModel: receiverCountryViewModel, amount: 600)
+        let receiverCountryViewModel = CountryViewViewModel(image: data.receiver.country.image, title: data.receiver.country.currency.rawValue)
+        let receiverExchangeViewModel = ExchangeDataViewViewModel(title: "Receiver gets", countryViewViewModel: receiverCountryViewModel, amount: data.receiver.amount)
 
         let transferViewModel = TransferViewViewModel(senderViewViewModel: senderExchangeViewModel, receiverViewViewModel: receiverExchangeViewModel)
 
