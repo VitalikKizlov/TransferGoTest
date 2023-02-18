@@ -14,7 +14,7 @@
 		FBA26398299BD2A300CA367F /* TransferGoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA26397299BD2A300CA367F /* TransferGoTestTests.swift */; };
 		FBA263A2299BD2A300CA367F /* TransferGoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */; };
 		FBA263A4299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */; };
-		FBA263D6299D4E8A00CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263D5299D4E8A00CA367F /* Transfer */; };
+		FBA263E2299D701B00CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263E1299D701B00CA367F /* Transfer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,7 @@
 		FBA2639D299BD2A300CA367F /* TransferGoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransferGoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITests.swift; sourceTree = "<group>"; };
 		FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferGoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FBA263D8299D511500CA367F /* CurrencyConverterKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CurrencyConverterKit; path = ../CurrencyConverterKit; sourceTree = "<group>"; };
+		FBA263E0299D700E00CA367F /* CurrencyConverterKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CurrencyConverterKit; path = ../CurrencyConverterKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBA263D6299D4E8A00CA367F /* Transfer in Frameworks */,
+				FBA263E2299D701B00CA367F /* Transfer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 		FBA26374299BD2A100CA367F = {
 			isa = PBXGroup;
 			children = (
-				FBA263D7299D511500CA367F /* Packages */,
+				FBA263DF299D700E00CA367F /* Packages */,
 				FBA2637F299BD2A100CA367F /* TransferGoTest */,
 				FBA26396299BD2A300CA367F /* TransferGoTestTests */,
 				FBA263A0299BD2A300CA367F /* TransferGoTestUITests */,
@@ -133,10 +133,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FBA263D7299D511500CA367F /* Packages */ = {
+		FBA263DF299D700E00CA367F /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				FBA263D8299D511500CA367F /* CurrencyConverterKit */,
+				FBA263E0299D700E00CA367F /* CurrencyConverterKit */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			);
 			name = TransferGoTest;
 			packageProductDependencies = (
-				FBA263D5299D4E8A00CA367F /* Transfer */,
+				FBA263E1299D701B00CA367F /* Transfer */,
 			);
 			productName = TransferGoTest;
 			productReference = FBA2637D299BD2A100CA367F /* TransferGoTest.app */;
@@ -614,9 +614,8 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FBA263D5299D4E8A00CA367F /* Transfer */ = {
+		FBA263E1299D701B00CA367F /* Transfer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FBA263D4299D4E8A00CA367F /* XCRemoteSwiftPackageReference "CurrencyConverterKit" */;
 			productName = Transfer;
 		};
 /* End XCSwiftPackageProductDependency section */

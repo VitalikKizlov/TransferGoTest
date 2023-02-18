@@ -8,14 +8,12 @@
 import UIKit
 import Combine
 import Transfer
-import Utilities
-import Models
 
 class ViewController: UIViewController {
 
     private let viewModel: CurrencyExchangeViewModel
 
-    @AutoLayoutable private var transferView = TransferView()
+    @AutoLayoutable private var transferView = CurrencyConverterView()
 
     private var subscriptions: Set<AnyCancellable> = []
 
@@ -49,7 +47,6 @@ class ViewController: UIViewController {
             transferView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             transferView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             transferView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            transferView.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
 
@@ -61,8 +58,8 @@ class ViewController: UIViewController {
                 guard let self = self else { return }
 
                 switch state {
-                case .idle(let data):
-                    self.updateTransferView(from: data)
+                case .idle:
+                    break
                 case .failed(let error):
                     print(error)
                 case .loading:
@@ -73,11 +70,31 @@ class ViewController: UIViewController {
             }
             .store(in: &subscriptions)
 
+        viewModel
+            .isAmountValidPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] parameters in
+                guard let self = self else { return }
+
+                if !parameters.isValid {
+                    let errorViewModel = TransferViewErrorViewModel(parameters.currency)
+                    self.transferView.configureErrorState(errorViewModel)
+                }
+            }
+            .store(in: &subscriptions)
+
         transferView
             .viewActionPublisher
             .sink { [weak self] action in
                 guard let self = self else { return }
-                self.viewModel.viewInput.send(action)
+                switch action {
+                case .sendingFromViewTapped:
+                    self.showSearchViewController(.sender)
+                case .receiveViewTapped:
+                    self.showSearchViewController(.receiver)
+                default:
+                    self.viewModel.viewInput.send(action)
+                }
             }
             .store(in: &subscriptions)
     }
@@ -92,6 +109,17 @@ class ViewController: UIViewController {
         let transferViewModel = TransferViewViewModel(senderViewViewModel: senderExchangeViewModel, receiverViewViewModel: receiverExchangeViewModel)
 
         transferView.configure(transferViewModel)
+    }
+
+    private func showSearchViewController(_ context: SearchViewModel.Context) {
+        let searchViewModel = SearchViewModel(context)
+        let searchViewController = SearchViewController(searchViewModel)
+
+        let navigationController = UINavigationController(rootViewController: searchViewController)
+        navigationController.navigationBar.backgroundColor = .white
+        navigationController.navigationBar.prefersLargeTitles = true
+
+        present(navigationController, animated: true)
     }
 }
 
