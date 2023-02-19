@@ -8,6 +8,15 @@
         "revision" : "7300c75ff9e072aa7fd0fccefcc88f74aae9bf56",
         "version" : "0.4.1"
       }
+    },
+    {
+      "identity" : "currencyconverterkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/VitalikKizlov/CurrencyConverterKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2d457f005de1057be4b6905a6ef4c88a61d2c51f"
+      }
     }
   ],
   "version" : 2
