@@ -100,13 +100,39 @@ class ViewController: UIViewController {
     }
 
     private func updateTransferView(from data: ExchangeData) {
-        let senderCountryViewModel = CountryViewViewModel(image: data.sender.country.image, title: data.sender.country.currency.rawValue)
-        let senderExchangeViewModel = ExchangeDataViewViewModel(title: "Sending from", countryViewViewModel: senderCountryViewModel, amount: data.sender.amount)
+        let senderCountryViewModel = CountryViewViewModel(
+            image: data.sender.country.image,
+            title: data.sender.country.currency.rawValue
+        )
 
-        let receiverCountryViewModel = CountryViewViewModel(image: data.receiver.country.image, title: data.receiver.country.currency.rawValue)
-        let receiverExchangeViewModel = ExchangeDataViewViewModel(title: "Receiver gets", countryViewViewModel: receiverCountryViewModel, amount: data.receiver.amount)
+        let senderExchangeViewModel = ExchangeDataViewViewModel(
+            title: "Sending from",
+            countryViewViewModel: senderCountryViewModel,
+            amount: data.sender.amount
+        )
 
-        let transferViewModel = TransferViewViewModel(senderViewViewModel: senderExchangeViewModel, receiverViewViewModel: receiverExchangeViewModel)
+        let receiverCountryViewModel = CountryViewViewModel(
+            image: data.receiver.country.image,
+            title: data.receiver.country.currency.rawValue
+        )
+
+        let receiverExchangeViewModel = ExchangeDataViewViewModel(
+            title: "Receiver gets",
+            countryViewViewModel: receiverCountryViewModel,
+            amount: data.receiver.amount
+        )
+
+        let exchangeRateViewViewModel = ExchangeRateViewViewModel(
+            fromCurrency: data.sender.country.currency,
+            toCurrency: data.receiver.country.currency,
+            rate: data.rate ?? 0
+        )
+
+        let transferViewModel = TransferViewViewModel(
+            senderViewViewModel: senderExchangeViewModel,
+            receiverViewViewModel: receiverExchangeViewModel,
+            exchangeRateViewViewModel: exchangeRateViewViewModel
+        )
 
         transferView.configure(transferViewModel)
     }
