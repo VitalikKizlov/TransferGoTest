@@ -15,6 +15,7 @@
 		FBA263A2299BD2A300CA367F /* TransferGoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A1299BD2A300CA367F /* TransferGoTestUITests.swift */; };
 		FBA263A4299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA263A3299BD2A300CA367F /* TransferGoTestUITestsLaunchTests.swift */; };
 		FBA263E2299D701B00CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263E1299D701B00CA367F /* Transfer */; };
+		FBA263E429A0F36A00CA367F /* Transfer in Frameworks */ = {isa = PBXBuildFile; productRef = FBA263E329A0F36A00CA367F /* Transfer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA263E429A0F36A00CA367F /* Transfer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +180,9 @@
 				FBA26395299BD2A300CA367F /* PBXTargetDependency */,
 			);
 			name = TransferGoTestTests;
+			packageProductDependencies = (
+				FBA263E329A0F36A00CA367F /* Transfer */,
+			);
 			productName = TransferGoTestTests;
 			productReference = FBA26393299BD2A300CA367F /* TransferGoTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -616,6 +621,11 @@
 /* Begin XCSwiftPackageProductDependency section */
 		FBA263E1299D701B00CA367F /* Transfer */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = Transfer;
+		};
+		FBA263E329A0F36A00CA367F /* Transfer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBA263D4299D4E8A00CA367F /* XCRemoteSwiftPackageReference "CurrencyConverterKit" */;
 			productName = Transfer;
 		};
 /* End XCSwiftPackageProductDependency section */
